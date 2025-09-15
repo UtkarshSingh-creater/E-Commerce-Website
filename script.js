@@ -1,4 +1,4 @@
-// Simple JavaScript for interactive elements
+
 document.addEventListener('DOMContentLoaded', function() {
     // Add to cart animation
     const addToCartButtons = document.querySelectorAll('.product-actions button:nth-child(2)');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Cookie consent dismissal
+    
     const acceptCookies = document.querySelector('.btn-accept');
     if (acceptCookies) {
         acceptCookies.addEventListener('click', function() {
@@ -31,22 +31,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Currency conversion function (USD to INR)
+   
     function convertToRupees(priceInDollars) {
-        const exchangeRate = 83; // Current approximate exchange rate
+        const exchangeRate = 83; 
         return Math.round(priceInDollars * exchangeRate);
     }
 
-    // Format price with Indian Rupee symbol and commas
+ 
     function formatPrice(price) {
         return '₹' + price.toLocaleString('en-IN');
     }
 
-    // Convert all prices on the page to Rupees
+    
     function convertAllPrices() {
         const priceElements = document.querySelectorAll('.product-price');
         priceElements.forEach(element => {
-            // Extract the numeric value from the price text
+           
             const priceText = element.textContent;
             const priceValue = parseFloat(priceText.replace(/[^\d.]/g, ''));
             
@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Call the function to convert prices
+    
     convertAllPrices();
+
 });
